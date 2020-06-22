@@ -8,3 +8,4 @@ https://github.com/HowieYuan/shiro/tree/master/shiroJWT
 1、满足shiro+jwt_springboot的要求
 2、使用jwt是io.jsonwebtoken.jjwt  使用固定密钥和username来生成token
 3、没有sql
+4/
