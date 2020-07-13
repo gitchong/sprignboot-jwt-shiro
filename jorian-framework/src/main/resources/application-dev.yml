@@ -1,0 +1,54 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jorian_framework?useUnicode=yes&characterEncoding=UTF8
+    username: root
+    password: 111111
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+    password: 111111
+  #  rabbitmq:
+#    username: jorian
+#    password: jorian
+#    host: 192.168.200.9
+#    port: 5672
+#    virtual-host: /
+#    listener:
+#      simple:
+#        concurrency: 10
+#        max-concurrency: 20
+#        prefetch: 50
+  #responsetory 操作es
+#  data:
+#    elasticsearch:
+#      cluster-nodes: 192.168.200.10:9300
+#      cluster-name: elasticsearch
+#  # jest方式操作es
+#  elasticsearch:
+#    jest:
+#      uris: http://192.168.200.10:9200
+files:
+  path: ${file-path:d:/files}
+  url: "http://localhost:8084"
+logging:
+  file: ../logs/jorian-log.log
+  level:
+    root: info
+
+
+
+
+
+
+
+
+
+

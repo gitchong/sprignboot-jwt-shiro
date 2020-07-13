@@ -1,0 +1,44 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+
+jasypt:
+  encryptor:
+    password: e!swhdg&d763jo
+
+---
+# 开发环境配置(配置项只包括环境不同项)
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 111111
+    url: jdbc:mysql://10.100.12.202:3306/tom?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    platform: mysql
+    schema: classpath:db/schema.sql
+    data: classpath:db/data.sql
+    # 每次重启都会根据data.sql schema.sql重建表数据, 设置 NEVER 就不启动重建
+    initialization-mode: always
+  jpa:
+    database: mysql
+    show-sql: true
+
+---
+# 开发环境配置(配置项只包括环境不同项)
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: ENC(vp7cbF0sE/lRsThrcwdiA/WoeG1mIXzy)
+    url: jdbc:mysql://47.110.55.246:3306/tom?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    platform: mysql
+    schema: classpath:db/schema.sql
+    data: classpath:db/data.sql
+    initialization-mode: always
+  jpa:
+    database: mysql
+    show-sql: true
